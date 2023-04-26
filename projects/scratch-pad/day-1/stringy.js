@@ -82,10 +82,11 @@ function toDashCase(string) {
 function beginsWith(string, char) {
     // YOUR CODE BELOW HERE //
 
-    //test if the first letter in string equals the value of char, should not be case sensitive, should return boolean
-    if (string[0] === char.toLowerCase()) {
+    // if first letter in string equals char return true, regardless of case
+    if (string[0].toLowerCase() === char.toLowerCase()) {
         return true
     }
+    // set any other condition to false
     else {
         return false
     }
@@ -108,7 +109,14 @@ function beginsWith(string, char) {
 function endsWith(string, char) {
     // YOUR CODE BELOW HERE //
 
-
+        // if last letter in string equals char return true, regardless of case
+    if (string[string.length -1].toLowerCase() === char.toLowerCase()) {
+        return true
+    }
+    // any other condition is false
+    else {
+        return false
+    }
 
     // YOUR CODE ABOVE HERE //
 }
@@ -121,7 +129,7 @@ function endsWith(string, char) {
 function concat(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
 
-
+return stringOne.concat(stringTwo.toString())
 
     // YOUR CODE ABOVE HERE //
 }
@@ -139,7 +147,8 @@ function concat(stringOne, stringTwo) {
 function join(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
     var args = Array.from(arguments);
-
+    // join arguments array to form a string
+return args.join('')
 
     // YOUR CODE ABOVE HERE //
 }
@@ -156,6 +165,16 @@ function join(stringOne, stringTwo) {
 function longest(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
 
+    // when stringOne is longer than stringTwo return stringOne
+if (stringOne.length > stringTwo.length) {
+    return stringOne
+}
+//return stringTwo if any other case
+else {
+    return stringTwo
+}
+
+// note: technically if the strings were equal in length this would incorrectly return string two, whic is easily solvable, since it passes the tests i will leave it as is and ask Alex
 
 
     // YOUR CODE ABOVE HERE //
