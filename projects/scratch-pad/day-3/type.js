@@ -15,6 +15,10 @@
 function isArray(value) {
     // YOUR CODE BELOW HERE //
     
+    if (Array.isArray(value) === true) {
+        return true
+    }
+    else if (Array.isArray(value) === false) {return false}
     
     
     

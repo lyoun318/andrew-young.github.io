@@ -35,21 +35,65 @@
 
 // YOUR CODE GOES BELOW HERE //
 function makeContact(id, nameFirst, nameLast) {
-
-} 
-
+// initialize contact object and add key value pairs
+var contact = {}
+// add key value pairs from arguments to contact object
+contact.id = id,
+contact.nameFirst = nameFirst,
+contact.nameLast = nameLast;
+//return contact object
+return contact
+}
 
 function makeContactList() {
     /*
      * You need something here to hold contacts. See length api for a hint:
      */
-    var contacts;
+    var contacts = [];
     
     return {
         // we implemented the length api for you //
         length: function() {
             return contacts.length;
+            },
+        addContact: function(contact) {
+        // take argument contact and add to contacts array
+        contacts.push(contact)
+            },
+        findContact: function(fullName) {
+        // iterate through contacts array
+        for (var i = 0; i < contacts.length; i++) {
+            // combine first name and last name of object to equal fName vairable
+            let fName = contacts[i].nameFirst + ' ' + contacts[i].nameLast;
+            // if fullName parameter matches fName variable return matching object
+            if (fName === fullName) {
+                return contacts[i];
+                    }
+                }
+            },
+        removeContact: function(contact) {
+        //iterate through contacts array
+        for (var i = 0; i < contacts.length; i++) {
+            if (contacts[i] === contact) {
+                    //delete object
+                    contacts.splice(i, 1)
+            }
+            }
+        },
+        printAllContactNames: function() {
+            var string =''
+            //iterate through contacts array
+            for (var i = 0; i < contacts.length; i++) {
+                if (i < contacts.length - 1) {
+                    string = string + contacts[i].nameFirst + ' ' + contacts[i].nameLast + '\n'
+                }
+                else if (i = contacts.length - 1) {
+                    string = string + contacts[i].nameFirst + ' ' + contacts[i].nameLast  
+                }
+            }
+            return string
         }
+
     }
 }
 
