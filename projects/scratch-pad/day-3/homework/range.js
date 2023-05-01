@@ -23,10 +23,24 @@
  */
 function range(start, end) {
     // YOUR CODE GOES BELOW HERE //
-    
-    
-    
-    
+    //initialize i array
+    var a = []
+    //if start < end create for loop that starts counting at start parameter and counts up to end parameter
+    if (start < end) {
+        for (var i = start; i <= end; i++) {
+    //push each value to a array
+    a.push(i)
+    }
+    } 
+    //if start > end create for loop that starts counting at start parameter and counts down to end parameter
+    else {
+        for (var i = start; i >= end; i--) {
+    //push each value to a array
+    a.push(i)
+    }
+    }
+    //return a
+    return a
     // YOUR CODE GOES ABOVE HERE //
 }
 

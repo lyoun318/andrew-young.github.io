@@ -13,10 +13,11 @@
  */
 function createGreaterThanFilter(base) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
-    
+    //create function to take value and test against base
+    return function(value) {
+        //check if value is greater than base
+        return value > base;
+      };
     // YOUR CODE ABOVE HERE //
 }
 
@@ -27,10 +28,12 @@ function createGreaterThanFilter(base) {
  */
 function createLessThanFilter(base) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
-    
+        //create function to take value and test against base
+        return function(value) {
+            //check if value is less than base
+            return value < base;
+          };
+
     // YOUR CODE ABOVE HERE //
 }
 
@@ -41,10 +44,12 @@ function createLessThanFilter(base) {
  */
 function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
-    
+    // create function to take string parameter
+    return function(string) {
+        //check if first letter in string is startswith value
+        return string[0].toUpperCase() === startsWith.toUpperCase();
+      };
+
     // YOUR CODE ABOVE HERE //
 }
 
@@ -55,8 +60,11 @@ function createStartsWithFilter(startsWith) {
  */
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
-    
-    
+        // create function to take string parameter
+        return function(string) {
+            //check if last letter in string is endswith value
+            return string[string.length - 1].toUpperCase() === endsWith.toUpperCase();
+          };
     
     
     // YOUR CODE ABOVE HERE //
@@ -71,7 +79,15 @@ function createEndsWithFilter(endsWith) {
  */
 function modifyStrings(strings, modify) {
     // YOUR CODE BELOW HERE //
-    
+    //initialize mod variable
+    var mod = [];
+    //loop through strings array
+    for (var i = 0; i < strings.length; i++) {
+        //add modify values to mod variable
+      mod.push(modify(strings[i]));
+    }
+    //return mod
+    return mod;
     
     
     
@@ -89,10 +105,14 @@ function modifyStrings(strings, modify) {
  */
 function allStringsPass(strings, test) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
-    
+    //iterate through strings array
+    for (var i = 0; i < strings.length; i++) {
+        //return false if strings dont pass test
+        if (!test(strings[i])) {
+          return false;
+        }
+      }
+      return true;
     // YOUR CODE ABOVE HERE //
 }
 
