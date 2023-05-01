@@ -12,7 +12,22 @@
 */
 function fizzBuzz() {
     // YOUR CODE GOES BELOW HERE //
-
+    //loop to create incrementing variable counting up to 100
+for (var i = 1; i <= 100; i++){
+    //if i is a multiple of 3 and 5 print FizzBuzz
+    if (i % 5 === 0 && i % 3 === 0) {
+        console.log('FizzBuzz')
+    } //if i is a multiple of 3 print fizz
+    else if (i % 3 === 0) {
+        console.log('Fizz')
+    } //if i is a multiple of 5 print buzz
+    else if (i % 5 === 0) {
+        console.log('Buzz')
+    } //else print i
+    else {
+        console.log(i)
+    }
+}
 
 
     // YOUR CODE GOES ABOVE HERE //

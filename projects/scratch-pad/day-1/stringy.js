@@ -174,7 +174,7 @@ else {
     return stringTwo
 }
 
-// note: technically if the strings were equal in length this would incorrectly return string two, whic is easily solvable, since it passes the tests i will leave it as is and ask Alex
+// note: technically if the strings were equal in length this would incorrectly return string two, whic is easily solvable, since it passes the tests i will leave it as is
 
 
     // YOUR CODE ABOVE HERE //
@@ -189,9 +189,16 @@ else {
  */
 function sortAscending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
+var array = [stringOne, stringTwo];
+var sorted = array.sort();
 
-
-
+if (stringOne === stringTwo) {
+    return 0
+} else if (sorted[0] === stringOne) {
+    return 1
+} else if (sorted[0] === stringTwo) {
+    return -1
+}
     // YOUR CODE ABOVE HERE //
 }
 
@@ -205,7 +212,16 @@ function sortAscending(stringOne, stringTwo) {
  */
 function sortDescending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
+    var array = [stringOne, stringTwo];
+    var sorted = array.sort();
+    
+    if (stringOne === stringTwo) {
+        return 0
+    } else if (sorted[0] === stringOne) {
+        return -1
+    } else if (sorted[0] === stringTwo) {
+        return 1
+    }
 
 
 
