@@ -88,11 +88,12 @@ console.log(animals.length);
 //////////////////////////////////////////////////////////////////////
 var friends = []; //initialize friends array because arrays store lists effectively
 function getRandom(array) {
-  return Math.random() * array.length - 1;
+  var randomNum = Math.floor(Math.random() * array.length);
+  return randomNum;
 }
-friends.push(animals[getRandom(animals)]['name']) //add name value from a random animal to the friends array
-dog.friends = friends //add friends key value pair to dog object
-console.log(animals)
+friends.push(animals[getRandom(animals)].name) //add name value from a random animal to the friends array
+animal['friends'] = friends //add friends key value pair to dog object
+
 /**
  * Nice work! You're done Part 1. Pat yourself on the back and
  * move onto Part 2 in the file called "functions.js"
