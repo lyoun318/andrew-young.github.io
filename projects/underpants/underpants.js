@@ -112,7 +112,28 @@ _.first = function (a, n) {
 *   _.last(["a", "b", "c"], 1) -> "c"
 *   _.last(["a", "b", "c"], 2) -> ["b", "c"]
 */
-
+_.last = function (a, n) {
+    if (!Array.isArray(a) || n < 0) {
+        return []
+    }
+    else if (typeof n !== 'number') {
+        return a[a.length - 1]
+    }
+    else {
+        if (n > a.length) {
+            return a
+        }
+        else {
+            let count = n
+            let index = []
+            for (let i = a.length - 1; count > 0; i--) {
+                index.unshift(a[i])
+                count--
+            }
+        return index
+        }
+    }
+}
 
 /** _.indexOf
 * Arguments:
@@ -129,7 +150,23 @@ _.first = function (a, n) {
 *   _.indexOf(["a","b","c"], "c") -> 2
 *   _.indexOf(["a","b","c"], "d") -> -1
 */
-
+_.indexOf = function (a, v) {
+    let blah;
+    if ( !Array.isArray(a)) {
+        return -1;
+    }
+    else {
+        for (let i = 0; i < a.length; i++) {
+            if (a[i] === v) {
+                blah = i;
+                return blah;
+            }
+        }
+    }
+    if (blah === undefined) {
+        return -1
+    }
+}
 
 /** _.contains
 * Arguments:
