@@ -182,7 +182,9 @@ _.indexOf = function (a, v) {
 * Examples:
 *   _.contains([1,"two", 3.14], "two") -> true
 */
-
+_.contains = function (a, v) {
+    return (a.includes(v) ? true : false);
+}
 
 /** _.each
 * Arguments:

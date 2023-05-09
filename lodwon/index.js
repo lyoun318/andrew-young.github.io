@@ -80,3 +80,42 @@ function first(a, n) {
         }
     }
 }
+
+/**
+ * last: takes in an array a, and a number n and returns the last n values within a array.
+ * 
+ * @param {Array,number} value: takes in an array and a number
+ * @returns {any value} value: returns the last <n> values within <a> array
+ */
+_.last = function (a, n) {
+    if (!Array.isArray(a) || n < 0) {
+        return []
+    }
+    else if (typeof n !== 'number') {
+        return a[a.length - 1]
+    }
+    else {
+        if (n > a.length) {
+            return a
+        }
+        else {
+            let count = n
+            let index = []
+            for (let i = a.length - 1; count > 0; i--) {
+                index.unshift(a[i])
+                count--
+            }
+        return index
+        }
+    }
+}
+
+/**
+ * contains: takes in an array a, and a value v and returns true if a contains v and false otherwise.
+ * 
+ * @param {Array,value} value: takes in an array and any value
+ * @returns {boolean} value: returns true if v is in a or false otherwise
+ */
+_.contains = function (a, v) {
+    return (a.includes(v) ? true : false);
+}
