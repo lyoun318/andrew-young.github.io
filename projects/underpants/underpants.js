@@ -150,23 +150,7 @@ _.last = function (a, n) {
 *   _.indexOf(["a","b","c"], "c") -> 2
 *   _.indexOf(["a","b","c"], "d") -> -1
 */
-_.indexOf = function (a, v) {
-    let blah;
-    if ( !Array.isArray(a)) {
-        return -1;
-    }
-    else {
-        for (let i = 0; i < a.length; i++) {
-            if (a[i] === v) {
-                blah = i;
-                return blah;
-            }
-        }
-    }
-    if (blah === undefined) {
-        return -1
-    }
-}
+
 
 /** _.contains
 * Arguments:
@@ -356,7 +340,26 @@ _.contains = function (a, v) {
 * Examples:
 *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
 */
-
+_.reduce = function(array, func, seed){
+    let result;
+    // determine if seed was not passed in
+    if (seed === undefined){
+        // use first element of array as seed
+        result = array[0]; // result = 1
+        for (let i = 1; i < array.length; i++){ 
+            // reassign result to func invocation
+            result = func(result, array[i], i, array);
+            
+        }
+    } else { // else it was
+        result = seed; // result = 0
+        for (let i = 0; i < array.length; i++){ // 
+            // reassign result to func invocation
+            result = func(result, array[i], i, array);
+        }
+    }
+    return result;
+}
 
 /** _.extend
 * Arguments:
